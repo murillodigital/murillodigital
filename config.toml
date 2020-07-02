@@ -1,0 +1,5 @@
+baseURL = "https://www.murillodigital.com/"
+languageCode = "en-us"
+title = "Leonardo Murillo"
+theme = "ananke"
+disqusShortname = "murillodigital"
