@@ -8,3 +8,5 @@ Imagine you are walking down some urban street, it's a beautiful sunny afternoon
 
 
 [Want to sit and chat for a while?](https://meet.google.com/yae-okuy-wqw)
+
+I'll be virtually available every Wednesday at 3pm (GMT-6) to meet with anybody looking for a good conversation. [Add to your calendar](https://calendar.google.com/event?action=TEMPLATE&tmeid=N24zOWFxaXEzNTU4MDZudjM3cHJjMmtlaGRfMjAyMDA3MDhUMjEwMDAwWiBsZW9uYXJkb0BkZXZvcHMuY3I&tmsrc=leonardo%40devops.cr&scp=ALL)
