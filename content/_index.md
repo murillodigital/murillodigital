@@ -1,6 +1,6 @@
 ---
 title: "Leonardo Murillo"
-featured_image: '/images/home_5.png'
+featured_image: '/images/home_6.png'
 description: "Endlessly curious about technology, business, the mind and our future"
 ---
 
