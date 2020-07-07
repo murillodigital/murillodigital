@@ -4,6 +4,6 @@ description: "Reach out and let's talk. One of the most important things I've le
 featured_image: '/images/get_in_touch.jpg'
 menu: main
 ---
-I want to hear from you. Please go ahead, send your thoughts, comments and experiences, and you will definitely hear back from me.
+I want to hear from you. Send your thoughts, comments, experiences or opportunities, and you will definitely hear back from me.
 
 {{< form-contact action="https://formspree.io/mwkrrewp" >}}
