@@ -26,18 +26,18 @@ Here's the scenario. Your company is running their inventory database in AWS usi
 
 Since the purpose of this experiment is to demonstrate the value of Debezium inside a relatively complex multi cloud architecture, we're going to mix things up by touching a varied set of services across the three clouds, what that means is, you are not going to see a homogenous set of services across them (say, for example, we could have simply used Kubernetes across all three clouds) --- this would not be an ideal scenario in the real world where you'd actually want some level of consistency.
 
-The other aspect of our strategy, which is one you _will_ want to guarantee in any real world scenario is, everything will be written in code, we will do no manual steps and, if you check out the experiments repo, you should be able to run the experiment against each cloud with no manual steps.
+The other aspect of our strategy, which is one you _will_ want to guarantee in any real world scenario is, everything will be written in code, we will do no manual steps and, if you check out the experiments repo, you should be able to run the experiment against each cloud with no human intervention.
 
 Lastly, we will go for fully managed services across all clouds! Here's our service selection:
 
 * For compute we will use:
-  * Elastic Compute Service in AWS, using Fargate
+  * Elastic Container Service on Fargate Spot in AWS
   * Google Cloud Run in GCP
   * Azure Kubernetes Service in Azure
 * Data Repositories
   * Amazon RDS in AWS using PostgreSQL
   * BigQuery in Google Cloud
-* Message streaming
+* Event streaming
   * AWS Managed Streaming for Kafka
 
 ![Architecture Diagram - Debezium Multicloud Solution](/images/debezium_diagram.svg)
