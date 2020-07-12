@@ -6,7 +6,7 @@ date: "2020-07-01"
 ---
 I'm naturally inclined to look for systems and structure whenever a problem requires a solution - after all this is what I do professionally in my role as CTO and Chief Solutions Architect every day: given an objective, find the more effective way to write an algorithm, design an infrastructure or lead towards reaching it as efficiently as possible.
 
-_The Power of Habit_ by Charles Duhigg was a fascinating read that gave me two insights that have already turned out life changing.
+[_The Power of Habit_](https://amzn.to/32bnbzg) by Charles Duhigg was a fascinating read that gave me two insights that have already turned out life changing.
 
 First, **we are programmable and automated**, a particularly powerful realization for a person with my natural inclinations.  
 Second, this quality of our very human nature is being constantly taken advantage of (some may even say abused) in order to manipulate and drive our behavior.
@@ -27,5 +27,5 @@ We are not machines, and these last two components I mention are precisely what 
 
 I for one, believe this human nature of ours is definitely what makes our system more powerful than any other - can't tell you how many times I've wished intensely for a piece of code to function only to have it blow up in my face, faith has no impact on the effectiveness of systems, but it is a subtle force that influences what we people do. I'm a spiritual, not-religious man, but I think most of my faith is actually self directed, I truly believe I have the ability to change, and this book has shown me how important it is to reinforce those thoughts.
 
-Definitely recommend you read _The Power of Habit_, find those cues and start re-programming your life, and never stop believing in whatever you choose to believe, because that is what will in the end make the real difference.
+Definitely recommend you read [_The Power of Habit_](https://amzn.to/32bnbzg), find those cues and start re-programming your life, and never stop believing in whatever you choose to believe, because that is what will in the end make the real difference.
 

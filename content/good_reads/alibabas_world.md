@@ -10,7 +10,7 @@ This thought has given me a lot of interest in understanding the ways business t
 
 That trend is quickly moving from the realm of the enterprise - after all the world's supply chain and enterprise information technology services are increasingly dependent on these economies - into the end consumer market; we see Baidu, TikTok and FlipKart disrupting the market share held with what some would have considered the unbeatable grip of some American companies.
 
-One of those stories, perhaps the most impressive one, is that of Alibaba - which is why I picked up _Alibaba's World_ by _Porter Erisman_ from the shelves of a local bookstore.
+One of those stories, perhaps the most impressive one, is that of Alibaba - which is why I picked up [_Alibaba's World_](https://amzn.to/2Zl68J5) by _Porter Erisman_ from the shelves of a local bookstore.
 
 David beats Goliath
 -------------------
@@ -36,4 +36,4 @@ I admit though, the above comment is not based on personal experience nor deep u
 
 A good start
 ------------
-I think, in my journey to understand business elsewhere, _Alibaba's world_ is a good start. It's a short read, written by somebody that shares some of my cultural background, Porter Erisman is an American man experiencing Alibaba and business in China as a foreigner - this is definitely a good starting point to what is evidently going to be a much larger quest where business is nothing but the result of a rich and complex combination of localized human culture and history.
+I think, in my journey to understand business elsewhere, [_Alibaba's World_](https://amzn.to/2Zl68J5) is a good start. It's a short read, written by somebody that shares some of my cultural background, Porter Erisman is an American man experiencing Alibaba and business in China as a foreigner - this is definitely a good starting point to what is evidently going to be a much larger quest where business is nothing but the result of a rich and complex combination of localized human culture and history.
