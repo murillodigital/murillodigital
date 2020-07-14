@@ -4,11 +4,11 @@ featured_image: '/images/home_6.png'
 description: "Endlessly curious about technology, business, the mind and our future"
 ---
 
-Welcome all! My name is **Leonardo Murillo**, I'm a technologist and entrepreneur and this is my opinionated place on the web, where I get to share with you what I learn, read and think, and hopefully get to tickle your curiosity as well.
+Welcome all! My name is **Leonardo Murillo**, I'm a cloud solutions architect and systems engineer, technologist and entrepreneur and this is my opinionated place on the web, where I get to share with you what I learn, read and think, and hopefully get to tickle your curiosity as well.
 
 I'm the proud father of two boys and a girl, based off [Costa Rica](https://en.wikipedia.org/wiki/Costa_Rica) but a citizen of the world.
 
-If you want to **stay up to date** with new content, I encourage you to join my mailing list. I send out one weekly email with opinions and links to any new articles or experiments I'm working on.
+If you want to **stay up to date** with new content, I encourage you to **join my mailing list**. I send out one weekly email with opinions and links to any new articles or experiments I'm working on.
 
 <!-- Begin Mailchimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
@@ -20,7 +20,7 @@ If you want to **stay up to date** with new content, I encourage you to join my 
 <div id="mc_embed_signup">
 <form action="https://murillodigital.us10.list-manage.com/subscribe/post?u=c12ff1afa71003663de3762cc&amp;id=4cff0f72fe" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
-	<h2>Stay in the loop</h2>
+	<h2>Subscribe and stay in the loop!</h2>
 <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
 <div class="mc-field-group">
 	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>

@@ -5,8 +5,8 @@ featured_image: '/images/lets_work_together.jpg'
 menu: main
 type: "about_me"
 ---
-Opportunities
--------------
+# Opportunities
+
 These are just a few of the more usual ways in which I engage with teams and companies to help them achieve their technology and business objectives:
 
 **Consulting**: Short and long term Cloud native solutions architecture and systems engineering consulting engagements. I can provide expert support to your company and team before, during and after deployment of complex IT projects. 
@@ -15,10 +15,11 @@ These are just a few of the more usual ways in which I engage with teams and com
 
 **Strategic Advice and Coaching**: Provide advice and guidance to IT leaders and teams in your organization, supporting their design and evaluation of technology projects, as well as facilitating culture transformation and knowledge acquisition.
 
-[Reach out]({{< ref contact >}}) and let's talk!
+## [Reach out]({{< ref contact >}}) and let's talk!
 
-A little about me
------------------
+---
+
+# A little about me
 
 My career spans over 20 years. Over that course I've worked across many roles in technology, from directing IT operations of a colocation facility to building cloud native solutions for both startups and Fortune 500s.
 

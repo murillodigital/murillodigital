@@ -1,5 +1,5 @@
 ---
-title: "Multicloud data with Debezium - Part 1"
+title: "Multicloud data with Debezium - Part 1: The architecture"
 date: "2020-07-03"
 description: "An Open Source way to deliver your data to any cloud"
 featured_image: "/images/debezium.jpeg"
