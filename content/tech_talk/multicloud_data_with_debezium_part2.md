@@ -10,3 +10,8 @@ For those that just got here and need a quick intro or if you need to know which
 
 Before we do anything, the same disclaimer you will see across all four parts: **this experiment is not production ready**, we will be using development level resources throughout and no redundancy will be in place, do not go about and try to implement this as is in a production setting unless you're looking for a dramatic way to find a new job.
 
+# Architecture
+
+In order to make our lifes simpler, we will be using AWS's default VPC and subnets to deploy our infrastructure.
+
+# Resource Walkthrough

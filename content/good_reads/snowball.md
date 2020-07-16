@@ -13,3 +13,9 @@ the stories are not quite right, the legend is skewed, but he is brilliant
 hes human, maturing and evolving, thats a great lesson
 
 it was like reading the bible, with Buffett and his partners as apostles and the investors in their partnerships following faithuflly merely guided by Buffett seemingly miraculous feats
+
+time doesnt compound, its the one thing that you can't collect
+
+contradictions and paradox in his views around health
+
+errors by omission ---- the avoidance of waste

@@ -8,7 +8,7 @@ When thinking multi cloud, data is usually one of the more complicated concerns.
 
 And that is tricky, and usually expensive.
 
-In this series I will demonstrate a concept in which we leverage Debezium, an _open source distributed platform for change data capture_ as our core mechanism to get data across multiple clouds.
+In this series I will demonstrate a concept in which we leverage Debezium, an _open source distributed platform for change data capture (CDC)_ as our core mechanism to get data across multiple clouds. 
 
 **Part 1** (the article you are reading) will give you a quick introduction to what we will be building.
  
