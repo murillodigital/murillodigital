@@ -12,11 +12,11 @@ In this series I will demonstrate a concept in which we leverage Debezium, an _o
 
 **Part 1** (the article you are reading) will give you a quick introduction to what we will be building.
  
-**Part 2** will show you the deployment of our source data tier in AWS, this is where Debezium will be streaming data changes from.  
+[**Part 2**]({{< ref multicloud_data_with_debezium_part2 >}}) will show you the deployment of our source data tier in AWS, this is where Debezium will be streaming data changes from.  
 
-**Part 3** will demonstrate the consuming side of the architecture in Google Cloud towards data analytics, and finally  
+**Part 3** (coming soon) will demonstrate the consuming side of the architecture in Google Cloud towards data analytics, and finally  
 
-**Part 4** will show you the Microsoft Azure side of the equation with a simple product availability notification service.
+**Part 4** (coming soon) will show you the Microsoft Azure side of the equation with a simple product availability notification service.
 
 
 Cool, now what is it that we're going to be building?
@@ -30,22 +30,22 @@ The other aspect of our strategy, which is one you _will_ want to guarantee in a
 
 Lastly, we will go for fully managed services across all clouds! Here's our service selection:
 
-* For compute we will use:
-  * Elastic Container Service on Fargate Spot in AWS
+* **For compute we will use:**
+  * Elastic Container Service on Fargate in AWS
   * Google Cloud Run in GCP
   * Azure Kubernetes Service in Azure
-* Data Repositories
+* **Data Repositories**
   * Amazon RDS in AWS using PostgreSQL
   * BigQuery in Google Cloud
-* Event streaming
+* **Event streaming**
   * AWS Managed Streaming for Kafka
 
-![Architecture Diagram - Debezium Multicloud Solution](/images/debezium_diagram.svg)
+![Architecture Diagram - Debezium Multicloud Solution](/images/multicloud_data_with_debezium/part1_diagram.svg)
 
 So Debezium is what again?
 --------------------------
 
-In very few words, Debezium tracks changes to data by looking at DB transaction logs, turns those changes into events and pushes them as JSON messages to Kafka for consumption by any number of receivers. 
+In very few words, Debezium tracks changes to data by looking at DB transaction logs, turns those changes into events and pushes them as JSON messages to Kafka for consumption by any number of receivers. This type of technology is commonly known as **CDC**, which stands for **Change Data Capture**. 
 
 Debezium uses a [connector architecture](https://debezium.io/documentation/reference/connectors/index.html) and is built on top of Kafka Connect, their goal is to have a large library of connector for a large variety of DBMSes, and currently support:
 
