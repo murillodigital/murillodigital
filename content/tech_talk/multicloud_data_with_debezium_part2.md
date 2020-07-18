@@ -120,6 +120,5 @@ The only other two resources we create here are both `internal` and `external` s
 
 > _The default MSK configuration will not work with Debezium. Auto topic creation must be enabled for Debezium to dynamically generate topics based on the schema of the database. A replication factor must also be defined, otherwise you will run into a **NOT_ENOUGH_REPLICAS** error_
 
-
 # Ready to go! Deploy!
-That's it, now you are ready to deploy the terraformed infrastructure. From the `aws/terraform` subdirect
+That's it, now you are ready to deploy the terraformed infrastructure. From the `aws/terraform` subdirectory
