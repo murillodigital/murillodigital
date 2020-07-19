@@ -76,7 +76,7 @@ Follow [these instructions](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/
 
 # Let's look into the terraform code
 
-For simplicity, I'm not using modules rather have split all resources into individual files depending on their purpose.
+For simplicity, I'm not using modules rather have split all resources into individual files depending on their purpose. The `templates/` directory contains three files, two of them will be placed in the bastion host (dbase initializer and Debezium connector registration), and the third will be used to register the task definition in ECS.
 
 ```bash
 -rw-r--r--  1 leonardomurillo  staff   2099 Jul 16 13:52 bastion.tf
@@ -90,7 +90,7 @@ drwxr-xr-x  5 leonardomurillo  staff    160 Jul 15 05:56 templates
 -rw-r--r--  1 leonardomurillo  staff    255 Jul 16 05:43 variables.tf
 ```
 
-`main.tf` holds only the provider definition, the rest of the files should be self-explanatory by their name. Let's do a quick review of each:
+`main.tf` holds only the provider definition, the rest of the files should be self-explanatory by their name. We are not going to go over every line of code, I encourage you to clone the repo and [check out the code](https://github.com/murillodigital/experiments). Comment in the article if you have any questions. Let's do a quick review of each of the files:
 
 ### network.tf
 
@@ -116,9 +116,170 @@ The only other two resources we create here are both `internal` and `external` s
 
 ### msk.tf
 
-> _MSK Configurations cannot be deleted, this is a limitation by AWS. To go around that problem, we're adding a random string to its name._
+Here we define the necessary resources to spin up our Managed Kafka architecture. There are a couple of important details to pay attention to in the configuration we are creating.
+
+> _MSK Configurations cannot be deleted, this is a limitation by AWS. To go around that problem, we're adding a random string to its name. There's a downside to this, you will end up with lots of configurations over time if you apply/destroy as you iterate on testing_
+
+```hcl
+resource "aws_msk_configuration" "debezium_msk_configuration" {
+  kafka_versions = ["2.4.1"]
+  name           = "debezium${random_string.unique_configuration_identifier.result}"
+
+  server_properties = <<PROPERTIES
+min.insync.replicas = 1
+default.replication.factor = 1
+auto.create.topics.enable = true
+delete.topic.enable = true
+PROPERTIES
+}
+```
 
 > _The default MSK configuration will not work with Debezium. Auto topic creation must be enabled for Debezium to dynamically generate topics based on the schema of the database. A replication factor must also be defined, otherwise you will run into a **NOT_ENOUGH_REPLICAS** error_
 
+### database.tf
+
+Our RDS instance. The most important aspect to point out is here is, you need to make sure your PostgreSQL RDS is configured with the `rds.logical_replication` parameter set to 1 for Debezium to work correctly.
+
+```hcl
+resource "aws_db_parameter_group" "debezium_db_parameter_group" {
+  name = "murillodigitaldebeziumdbparams"
+  family = "postgres12"
+
+  parameter {
+    name = "rds.logical_replication"
+    value = "1"
+    apply_method = "pending-reboot"
+  }
+}
+```
+
+### ecs.tf
+
+Our Elastic Container Service resources live in this file. This is the more complex pieces of the architecture, since it contains the cluster, service, task, application load balancer, log group and IAM related resources. Let's highlight a few important details related to **Fargate**.
+
+Since we are using Fargate as compute capacity provider, **you need to make sure your cluster can assume the necessary rights** to communicate with AWS's API. AWS has a "built in" policy that has a generic set of grants required by ECS:
+
+```hcl
+resource "aws_iam_role" "debezium_fargate_iam_role" {
+  name               = "murillodigital-debezium-fargate-iam-role"
+  assume_role_policy = data.aws_iam_policy_document.debezium_fargate_iam_policy.json
+}
+
+data "aws_iam_policy_document" "debezium_fargate_iam_policy" {
+  statement {
+    actions = ["sts:AssumeRole"]
+
+    principals {
+      type        = "Service"
+      identifiers = ["ecs-tasks.amazonaws.com"]
+    }
+  }
+}
+
+resource "aws_iam_role_policy_attachment" "debezium_fargate_iam_policy_attachment" {
+  role       = aws_iam_role.debezium_fargate_iam_role.id
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
+}
+```
+
+Another important detail about Fargate is, **you must use the `awsvpc` network mode**, which you must specify in your task definition resource and template:
+
+```json
+[
+  {
+    "name": "debezium",
+    "image": "debezium/connect:1.2",
+    "cpu": 512,
+    "memory": 2048,
+    "essential": true,
+    "networkMode": "awsvpc",
+...
+``` 
+
+```hcl
+resource "aws_ecs_task_definition" "debezium_task" {
+  family = "murillodigital-debezium-task-definitiojn"
+  network_mode = "awsvpc"
+  requires_compatibilities = ["FARGATE"]
+  cpu = 512
+  memory = 2048
+  tags = {}
+  execution_role_arn = aws_iam_role.debezium_fargate_iam_role.arn
+  container_definitions = templatefile("./templates/task_definition.json.tpl", { bootstrap_servers = aws_msk_cluster.debezium_msk_cluster.bootstrap_brokers })
+}
+```
+
+> Debezium requires a good amount of memory to function. Anything below 2GB always ended up in the container killed because "out of memory"
+
+### bastion.tf
+
+Both RDS and Kafka can only be reached from inside the VPC, the bastion host serves a dual purpose. On the one hand it allows you to interact with the resources inside the VPC by SSHing into it, and on the other, we will use it to bootstrap some initial config in both RDS as well as MSK. Pay attention to the `User Data` passed to the instance:
+
+```hcl
+...
+
+  user_data = <<EOF
+#!/bin/bash
+echo '${replace(data.template_file.connector_initializer.rendered, "\n", " ")}' > /tmp/connector.json
+echo '${replace(data.template_file.debezium_sql_initializer.rendered, "\n", " ")}' > /tmp/initializer.sql
+sudo apt update
+sudo apt install -y wget
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
+sudo apt update
+sudo apt -y install postgresql-client-12
+sleep 120
+PGPASSWORD="${var.db_password}" psql -h ${aws_db_instance.debezium_db.address} -p 5432 -U "${var.db_username}" -d ${var.db_name} -f "/tmp/initializer.sql"
+curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" ${aws_lb.debezium_lb.dns_name}/connectors/ --data "@/tmp/connector.json"
+EOF
+
+  tags = {
+    name = "murillodigital-debezium-bastion"
+  }
+}
+```
+
 # Ready to go! Deploy!
-That's it, now you are ready to deploy the terraformed infrastructure. From the `aws/terraform` subdirectory
+That's it, now you are ready to deploy the terraformed infrastructure. From the `aws/terraform` subdirectory first do a quick `terraform plan` - you will be asked to enter the key name you generated at the beginning of this article, and you should have exported your AWS credentials:
+
+```bash
+$ terraform plan
+var.bastion_key_name
+  Enter a value: lmurillo-aws
+
+Refreshing Terraform state in-memory prior to plan...
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.
+
+data.template_file.debezium_sql_initializer: Refreshing state...
+data.aws_iam_policy_document.debezium_fargate_iam_policy: Refreshing state...
+data.aws_ami.ubuntu: Refreshing state...
+
+------------------------------------------------------------------------
+.
+.
+.
+
+Plan: 23 to add, 0 to change, 0 to destroy.
+
+------------------------------------------------------------------------
+
+```
+
+You should see that 23 new resources will be created. If all looks good, go ahead and `terraform apply`! Once you're done you should see output similar to this:
+
+```bash
+Apply complete! Resources: 23 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+bootstrap_brokers = b-2.murillodigitaldebezium.77nui4.c1.kafka.us-east-1.amazonaws.com:9092,b-1.murillodigitaldebezium.77nui4.c1.kafka.us-east-1.amazonaws.com:9092
+bootstrap_brokers_tls = b-2.murillodigitaldebezium.77nui4.c1.kafka.us-east-1.amazonaws.com:9094,b-1.murillodigitaldebezium.77nui4.c1.kafka.us-east-1.amazonaws.com:9094
+db_instance_address = terraform-20200718115331816800000002.c3cqhmzhqkow.us-east-1.rds.amazonaws.com
+debezium_bastion_ip = 3.83.8.152
+debezium_loadbalancer_endpoint = murillodigitaldebeziumlb-1310965208.us-east-1.elb.amazonaws.com
+zookeeper_connect_string = z-3.murillodigitaldebezium.77nui4.c1.kafka.us-east-1.amazonaws.com:2181,z-2.murillodigitaldebezium.77nui4.c1.kafka.us-east-1.amazonaws.com:2181,z-1.murillodigitaldebezium.77nui4.c1.kafka.us-east-1.amazonaws.com:2181
+```
+
+Lets take a quick look at the AWS console to see what we've created:
+
