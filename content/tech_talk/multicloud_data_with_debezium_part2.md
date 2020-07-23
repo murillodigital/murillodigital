@@ -6,7 +6,7 @@ featured_image: "/images/debezium.jpeg"
 ---
 Welcome to Part 2 of this 4-part experiment on Multicloud Data with Debezium - in this article we will be building the **source of our data, and will be implementing Debezium for tracking and streaming data changes in AWS**.
 
-For those that just got here and need a quick intro or if you need to know which tools you'll need installed to deploy this solution, take a look at [part 1]({{<  ref multicloud_data_with_debezium_part1 >}}) of this article.
+For those that just got here and need a quick intro or if you need to know which tools you'll need installed to deploy this solution, take a look at [part 1]({{<  ref multicloud_data_with_debezium_part1 >}}) of this series.
 
 Before we do anything, the same disclaimer you will see across all four parts: **this experiment is not production ready**, we will be using development level resources throughout and no redundancy will be in place, do not go about and try to implement this as is in a production setting unless you're looking for a dramatic way to find a new job.
 
@@ -39,7 +39,7 @@ In terms of security, although this is not quite ready for production, we are ta
 
 ## Clone the repository
 
-All the code you need to deploy this solution can be found at [github.com/murillodigital/experiments](https://github.com/murillodigital/experiments) inside a directory named `multicloud_data_with_debezium` and there you will find a subdirectory for every cloud we will be working on, today we're going to be looking into the `aws` folder.
+All the code you need to deploy this solution can be found at [github.com/murillodigital/experiments](https://github.com/murillodigital/experiments) inside a directory named `multicloud_data_with_debezium`, in there you will find a subdirectory for every cloud we will be working on, today we're going to be looking into the `aws` folder.
 
 ```bash
 $ git clone git@github.com:murillodigital/experiments
@@ -90,7 +90,9 @@ drwxr-xr-x  5 leonardomurillo  staff    160 Jul 15 05:56 templates
 -rw-r--r--  1 leonardomurillo  staff    255 Jul 16 05:43 variables.tf
 ```
 
-`main.tf` holds only the provider definition, the rest of the files should be self-explanatory by their name. We are not going to go over every line of code, I encourage you to clone the repo and [check out the code](https://github.com/murillodigital/experiments). Comment in the article if you have any questions. Let's do a quick review of each of the files:
+`main.tf` holds only the provider definition, the rest of the files are named given the set of resources they create. We are not going to go over every line of code, I encourage you to clone the repo and [check out the code](https://github.com/murillodigital/experiments). Comment in the article if you have any questions.
+
+Let's do a quick review of each of the files:
 
 ### network.tf
 
@@ -118,7 +120,7 @@ The only other two resources we create here are both `internal` and `external` s
 
 Here we define the necessary resources to spin up our Managed Kafka architecture. There are a couple of important details to pay attention to in the configuration we are creating.
 
-> _MSK Configurations cannot be deleted, this is a limitation by AWS. To go around that problem, we're adding a random string to its name. There's a downside to this, you will end up with lots of configurations over time if you apply/destroy as you iterate on testing_
+> _MSK Configurations cannot be deleted, this is a limitation by AWS. To go around that problem, we're adding a random string to the configuration name every time we create it. There's a downside to this, you will end up with lots of configurations over time if you apply/destroy as you iterate on testing, but if you don't do this, terraform will fail due to a resource name collision after you destroy and create a second time._
 
 ```hcl
 resource "aws_msk_configuration" "debezium_msk_configuration" {
@@ -134,7 +136,7 @@ PROPERTIES
 }
 ```
 
-> _The default MSK configuration will not work with Debezium. Auto topic creation must be enabled for Debezium to dynamically generate topics based on the schema of the database. A replication factor must also be defined, otherwise you will run into a **NOT_ENOUGH_REPLICAS** error_
+> _The default MSK configuration will not work with Debezium. Auto topic creation must be enabled for Debezium to dynamically generate topics based on the schema of the database. Two additional options need to be configured to avoid a **NOT_ENOUGH_REPLICAS** error, the number of in sync replicas, and the replication factor for each message._
 
 ### database.tf
 
@@ -155,9 +157,9 @@ resource "aws_db_parameter_group" "debezium_db_parameter_group" {
 
 ### ecs.tf
 
-Our Elastic Container Service resources live in this file. This is the more complex pieces of the architecture, since it contains the cluster, service, task, application load balancer, log group and IAM related resources. Let's highlight a few important details related to **Fargate**.
+Our Elastic Container Service resources live in this file. This is the more complex piece of the architecture, since it contains the cluster, service, task, application load balancer, log group and IAM related resources. Let's highlight a few important details related to **Fargate**.
 
-Since we are using Fargate as compute capacity provider, **you need to make sure your cluster can assume the necessary rights** to communicate with AWS's API. AWS has a "built in" policy that has a generic set of grants required by ECS:
+Since we are using Fargate as compute capacity provider, **you need to make sure your cluster can assume the necessary rights** to communicate with AWS's API. AWS has a "built in" policy that has a generic set of grants required by ECS called `AmazonECSTaskExecutionRolePolicy`:
 
 ```hcl
 resource "aws_iam_role" "debezium_fargate_iam_role" {
@@ -239,6 +241,14 @@ EOF
 }
 ```
 
+We are placing the rendered template files in the machine and installing the psql client. Note there's a two minute sleep in that script, this is not ideal, but it's there to solve a timing problem: the last line in that script POSTs our debezium connector configuration to the debezium service, it may take some time for the debezium container to spin up, so we need to account for that. A better way to go about this would be to use the aws cli tools to check at an interval whether the task has started, and then trigger the curl call, but that was a bit more logic than I wanted to take time to introduce in this _experiment_.
+
+### Some other details
+
+The username and password for the database are defined as variables in our `variables.tf` file and will default to username: `murillodigital` and password: `notmyrealpwd`. The name of the database we will be using to demonstrate our solution will be called `inventory` and you can see the very simple schema of the database by looking at the `initialize.sql.tpl` template. 
+
+Pay close attention to the connector configuration found in `templates/psql-conector.json.tpl`, for more information on the possible values for this configuration file you can see [the documentation on the debezium website](https://debezium.io/documentation/reference/1.2/connectors/postgresql.html)
+
 # Ready to go! Deploy!
 That's it, now you are ready to deploy the terraformed infrastructure. From the `aws/terraform` subdirectory first do a quick `terraform plan` - you will be asked to enter the key name you generated at the beginning of this article, and you should have exported your AWS credentials:
 
@@ -282,4 +292,24 @@ zookeeper_connect_string = z-3.murillodigitaldebezium.77nui4.c1.kafka.us-east-1.
 ```
 
 Lets take a quick look at the AWS console to see what we've created:
+
+Our RDS instance is ready to go, without public access and using the internal security group:
+
+![RDS Instance Running on AWS](/images/multicloud_data_with_debezium/screenshots/part2_rds.png)
+
+Our MSK cluster, with two broker nodes:
+
+![MSK Cluster on AWS](/images/multicloud_data_with_debezium/screenshots/part2_msk.png)
+
+Our ECS Cluster with one service running on Fargate:
+
+![ECS Cluster with Service on Fargate](/images/multicloud_data_with_debezium/screenshots/part2_ecs_cluster.png)
+
+And, if you go and look into the logs for the ECS task running Debezium, you will find the PostgreSQL connector is already running and connected to our inventory database running on RDS.
+
+![Debezium Logs on ECS Task](/images/multicloud_data_with_debezium/screenshots/part2_ecs_logs.png)
+
+# Let's see it in action
+
+Now that we have created all our resources, let's see how Debezium tracks changes to the database and publishes as messages to our MSK service:
 

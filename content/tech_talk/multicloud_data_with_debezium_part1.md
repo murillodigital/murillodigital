@@ -14,7 +14,7 @@ In this series I will demonstrate a concept in which we leverage Debezium, an _o
  
 [**Part 2**]({{< ref multicloud_data_with_debezium_part2 >}}) will show you the deployment of our source data tier in AWS, this is where Debezium will be streaming data changes from.  
 
-**Part 3** (coming soon) will demonstrate the consuming side of the architecture in Google Cloud towards data analytics, and finally  
+[**Part 3**]({{< ref multicloud_data_with_debezium_part3 >}}) will demonstrate the consuming side of the architecture in Google Cloud towards data analytics, and finally  
 
 **Part 4** (coming soon) will show you the Microsoft Azure side of the equation with a simple product availability notification service.
 
