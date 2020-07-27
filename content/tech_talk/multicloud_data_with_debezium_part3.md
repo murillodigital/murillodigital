@@ -20,6 +20,7 @@ We are now getting ready to start working with multiple clouds at the same time,
 * A Google Cloud account with billing enabled.
 * The gcloud command line tools. [Click here](https://cloud.google.com/sdk/install) for install instructions.
 * A Google Cloud Project attached to a billing account.
+* The Compute API enabled in your GCP project ([gcp getting started instructions](https://cloud.google.com/apis/docs/getting-started))
 * A service account with the necessary rights for Terraform to create resources inside the GCP project
 
 # Some initial preparations
