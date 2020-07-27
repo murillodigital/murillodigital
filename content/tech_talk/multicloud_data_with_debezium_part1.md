@@ -32,13 +32,13 @@ Lastly, we will go for fully managed services across all clouds! Here's our serv
 
 * **For compute we will use:**
   * Elastic Container Service on Fargate in AWS
-  * Google Cloud Run in GCP
   * Azure Kubernetes Service in Azure
 * **Data Repositories**
   * Amazon RDS in AWS using PostgreSQL
   * BigQuery in Google Cloud
-* **Event streaming**
+* **Event streaming and Data Pipelines**
   * AWS Managed Streaming for Kafka
+  * Cloud Data Flow in GCP
 
 ![Architecture Diagram - Debezium Multicloud Solution](/images/multicloud_data_with_debezium/part1_diagram.svg)
 

@@ -61,7 +61,7 @@ This issue with time is, from my perspective, the source of most of Mr. Buffett'
 
 
 
-# A scale of business beyond dreams
+# A scale of business beyond imagination
 
 Probably one of the most eye-opening insights to me from reading Mr. Buffett's fascinating life, particularly as his fame and wealth progressed, is the dimension at which global business operates. I have started companies and have worked with startups as well as Fortune 500s and have spent time with CEOs and CTOs, but it seems to me I haven't yet really been able to experience to topmost circles of power and influence. Spheres exist of extreme wealth, there is a scale of business and lifestyle beyond what most of us have the ability to explore.
 
