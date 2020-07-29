@@ -3,7 +3,6 @@ title: "Snowball"
 description: "Warren Buffett and The Business of Life"
 featured_image: '/images/snowball.png'
 date: "2020-07-19"
-draft: true
 ---
 Mr. Warren Buffett, known as "The Oracle of Omaha", a brilliant business man and perhaps the most famous investor of all time. He held the position of world's wealthiest man for many years, and his name pervades the news and is mentioned in virtually every book you can find that talks about the stock market. A man with an aura of humbleness and simplicity albeit being also known for his aggressiveness in negotiations and what some may identify as an obsession with money.
   
