@@ -4,7 +4,7 @@ description: "Why we do what we do in life and business."
 featured_image: '/images/power_of_habit.png'
 date: "2020-07-01"
 ---
-I'm naturally inclined to look for systems and structure whenever a problem requires a solution - after all this is what I do professionally every day: given an objective, find the more effective way to write an algorithm, design an infrastructure or lead towards reaching it as efficiently as possible.
+I'm naturally inclined to look for systems and structure whenever a problem requires a solution - after all this is what I do professionally every day: given an objective, find the more effective way to write an algorithm, design an architecture or lead towards reaching it as efficiently as possible.
 
 [_The Power of Habit_](https://amzn.to/32bnbzg) by Charles Duhigg was a fascinating read that gave me two insights that have already turned out life changing.
 
