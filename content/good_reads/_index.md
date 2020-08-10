@@ -1,6 +1,8 @@
 ---
 title: "Good reads"
-description: "One book a day keeps ignorance away. Nothing feeds the mind the way a good book does. I am always reading, and here I share my opinion on the books I've read with you"
+description: "Not all readers are leaders, but all leaders are readers - Harry Truman"
 featured_image: '/images/good_reads.jpg'
 menu: main
 ---
+Welcome to my Good Reads page! Here you will find comments, reviews and insights on many of the books I read. My goal is to encourage you to go out and read more, and more every day, and to share the knowledge I acquire with you, so you can share it with others.
+
