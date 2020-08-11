@@ -4,3 +4,7 @@
     float: left;
     margin: 5px;
 }
+
+.mc-layout__modalContent {
+    overflow: hidden !important;
+}

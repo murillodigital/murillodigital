@@ -4,6 +4,8 @@ description: "A Band of Renegades, an Epic Race, and the Birth of Spaceflight"
 featured_image: '/images/how_to_make_a_spaceship.png'
 date: "2020-05-15"
 ---
+## The new era of space travel is upon us
+
 Two things definitely fascinate me: space travel and extraordinary human beings.
 
 I was flying back from the Google Cloud Campus in Sunnyvale and bought [_How to make a spaceship_](https://amzn.to/3envQkz) by Julian Guthrie in SFO just by chance, and to my surprise I got a satisfying dose of both.
@@ -18,4 +20,4 @@ _How to make a spaceship_ tells the story of how a small group of brilliant indi
 
 Many free-thinkers, visionaries and fearless, extraordinary individuals are mentioned in the book, but one person in particular stands out, [Peter Diamandis](https://en.wikipedia.org/wiki/Peter_Diamandis), a unique mind with an extraordinary vision.
 
-If you are looking for a shot of inspiration and encouragement to think different and, literally, shoot for the stars, you will definitely enjoy [_How to make a spaceship_](https://amzn.to/3envQkz). 
+**If you are looking for a shot of inspiration and encouragement to think different and, literally, shoot for the stars, you will definitely enjoy [_How to make a spaceship_](https://amzn.to/3envQkz).**
