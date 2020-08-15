@@ -4,9 +4,9 @@ featured_image: '/images/home_6.png'
 description: "Endlessly curious about technology, business, the mind and our future"
 ---
 
-Welcome all! My name is **Leonardo Murillo**, I'm a cloud solutions architect and systems engineer, technologist and entrepreneur and this is my opinionated place on the web, where I get to share with you what I learn, read and think, and hopefully get to tickle your curiosity as well.
+Welcome all! My name is **Leonardo Murillo**, I'm a cloud solutions architect and systems engineer, technologist and entrepreneur and this is my opinionated place on the web. All reviews and opinions are my own.
 
-I'm the proud father of two boys and a girl, based off [Costa Rica](https://en.wikipedia.org/wiki/Costa_Rica) but a citizen of the world.
+I'm the proud father of two boys and a girl, based off [Costa Rica](https://en.wikipedia.org/wiki/Costa_Rica) but frequent traveler.
 
 If you want to **stay up to date** with new content, I encourage you to **join my mailing list**. I send out one weekly email with opinions and links to any new articles or experiments I'm working on.
 

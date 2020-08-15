@@ -1,7 +1,7 @@
 ---
 title: "Alibabas World"
 description: "How a Remarkable Chinese Company Is Changing the Face of Global Business"
-featured_image: '/images/alibabas_world.png'
+featured_image: '/images/alibabas_world.jpg'
 date: "2020-05-15"
 ---
 ## The world economy is changing at neck breaking speed

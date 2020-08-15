@@ -1,7 +1,7 @@
 ---
 title: "The Power of Habit"
 description: "Why we do what we do in life and business."
-featured_image: '/images/power_of_habit.png'
+featured_image: '/images/power_of_habit.jpg'
 date: "2020-07-01"
 ---
 ## A systematic way to improve your life and reach your goals

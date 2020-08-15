@@ -4,11 +4,11 @@ date: "2020-07-10"
 description: "Our data source, the inventory database running in Amazon Web Services"
 featured_image: "/images/debezium.jpeg"
 ---
-Welcome to Part 2 of this 4-part experiment on Multicloud Data with Debezium - in this article we will be building the **source of our data, and will be implementing Debezium for tracking and streaming data changes in AWS**.
+Welcome to Part 2 of this 3-part series on Multicloud Data with Debezium - in this post we will be building the **source of our data, and will be implementing Debezium for tracking and streaming data changes in AWS**.
 
-For those that just got here and need a quick intro or if you need to know which tools you'll need installed to deploy this solution, take a look at [part 1]({{<  ref multicloud_data_with_debezium_part1 >}}) of this series.
+For those that just got here and need a refresher on the scenario that we're using for our experiment, or if you need to know which tools you'll need installed to deploy this solution, take a look at [part 1]({{<  ref multicloud_data_with_debezium_part1 >}}) of this series.
 
-Before we do anything, the same disclaimer you will see across all four parts: **this experiment is not production ready**, we will be using development level resources throughout and no redundancy will be in place, do not go about and try to implement this as is in a production setting unless you're looking for a dramatic way to find a new job.
+Before we do anything, the same disclaimer you will see across all three parts: **this experiment is not production ready**, do not go about and try to implement this as is in a production setting unless you're looking for a dramatic way to find a new job.
 
 # Prerequisites and Codebase
 
@@ -27,11 +27,13 @@ You can find the full codebase in the following repository:
 
 # Resource Walkthrough
 
-We will be working on a single AWS region, and to make our lives easier, will be using AWS's default VPC and subnets. We will be using only two subnets and as mentioned above, are not going for a fully HA implementation.
+We will be working on a single AWS region, creating two private subnets and two public subnets.
 
-A two node Managed Streaming For Kafka (MSK) cluster will be deployed, each node in a separate AZ. A single RDS instance and a Bastion host will be created in a single AZ all within the same VPC. The bastion host will be used both for bootstrapping the Database and registering the Debezium Connector as well as to be able to work against the database. We need this bastion host since, as I'll explain below, neither the database nor the Kafka cluster are available over the public internet - even though they are in a public subnet, they're not configured for public access and additionally are protected by a security group which allows connections only from services that share the same SG.
+A two node Managed Streaming For Kafka (MSK) cluster will be deployed, each node in a separate AZ. A single RDS instance and a Bastion host will be created in a single AZ all within the same VPC. The bastion host will be used both for bootstrapping the Database and registering the Debezium Connector as well as to be able to work against the database.
 
-Debezium will be running as a container inside a Elastic Container Service cluster, which will be using Fargate for capacity - this is ideal as we will not have to manage any sort of autoscaling or instance registration against the cluster. A single service definition will spin up a single task that is Debezium, logs will be shipped over to CloudWatch logs and, in order for us to reach the task on a friendly name, an Application Load Balancer will target the task and send traffic to it.
+The bastion host is required since, as I'll explain below, neither the database nor the Kafka cluster are available over the public internet, as they are deployed to private subnets and are also protected by a security group which allows connections only from services that share the same SG.
+
+Debezium will be running as a container inside an Elastic Container Service cluster, which will be using Fargate for capacity - this is ideal as we will not have to manage any sort of autoscaling or instance registration against the cluster. A single service definition will spin up a single task, logs will be shipped over to CloudWatch logs and, in order for us to reach the task on a friendly name, an Application Load Balancer will target the task and send traffic to it.
 
 In terms of security, although this is not quite ready for production, we are taking some measures to provide a basic level of protection. Two security groups will be created: one `external` which will allow access via SSH to the Bastion host as well as allow connections from anywhere to the application load balancer on port 80 and one `internal` that enables all services inside AWS to communicate with one another, but not to be reached from anything public. 
 
@@ -76,13 +78,12 @@ Follow [these instructions](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/
 
 # Let's look into the terraform code
 
-For simplicity, I'm not using modules rather have split all resources into individual files depending on their purpose. The `templates/` directory contains three files, two of them will be placed in the bastion host (dbase initializer and Debezium connector registration), and the third will be used to register the task definition in ECS.
+The full set of resources required for our data source in AWS are available inside the `aws/terraform` directory, we will be using this as a module inside the `main.tf` file in the root of `multicloud_data_with_debezium` directory. The `templates/` sub directory contains three files, two of them will be placed in the bastion host (dbase initializer and Debezium connector registration), and the third will be used to register the task definition in ECS.
 
 ```bash
 -rw-r--r--  1 leonardomurillo  staff   2099 Jul 16 13:52 bastion.tf
 -rw-r--r--  1 leonardomurillo  staff   1113 Jul 16 06:12 database.tf
 -rw-r--r--  1 leonardomurillo  staff   2665 Jul 16 06:28 ecs.tf
--rw-r--r--  1 leonardomurillo  staff     41 Jul 15 19:14 main.tf
 -rw-r--r--  1 leonardomurillo  staff   1330 Jul 16 05:26 msk.tf
 -rw-r--r--  1 leonardomurillo  staff   1340 Jul 16 06:53 network.tf
 -rw-r--r--  1 leonardomurillo  staff    702 Jul 16 05:50 outputs.tf
@@ -90,31 +91,17 @@ drwxr-xr-x  5 leonardomurillo  staff    160 Jul 15 05:56 templates
 -rw-r--r--  1 leonardomurillo  staff    255 Jul 16 05:43 variables.tf
 ```
 
-`main.tf` holds only the provider definition, the rest of the files are named given the set of resources they create. We are not going to go over every line of code, I encourage you to clone the repo and [check out the code](https://github.com/murillodigital/experiments). Comment in the article if you have any questions.
+We are not going to go over every line of code, I encourage you to clone the repo and [check out the code](https://github.com/murillodigital/experiments). Comment in the article if you have any questions.
 
 Let's do a quick review of each of the files:
 
 ### network.tf
 
-We are using AWS default VPC and subnets for creating our infrastructure, this is not ideal in a production setting but it dramatically simplifies the amount of network _wiring_ we need to create. Terraform includes some handy resources that do not create rather lookup these default resources so you can refer them elsewhere in your code
+We will deploy all fundamental resources required in terms of network to be have both public and private subnets in a single region. In [part 3]({{< ref multicloud_data_with_debezium_part3 >}}) we will also build on top of these resources to establish a VPN connection between our AWS VPC and the GCP VPC we will be creating.
 
-```hcl
-resource "aws_default_vpc" "default_vpc" { }
+Once VPC with a total of four subnets, two public and two private, one routing table for the public subnets and another one for the private ones, internet gateway,  nat gateway, a public and private security group, and all the necessary security group rules and routing table routes are created here.
 
-resource "aws_default_subnet" "default_az1" {
-  availability_zone = "us-east-1a"
-}
-
-resource "aws_default_subnet" "default_az2" {
-  availability_zone = "us-east-1b"
-}
-
-resource "aws_default_subnet" "default_az3" {
-  availability_zone = "us-east-1c"
-}
-```
-
-The only other two resources we create here are both `internal` and `external` security groups.
+> When using terraform, it is usually a good decision to create individual resources for security group rules and routing table routes, and not put them as properties of their parent resource alone. This is particularly important in our scenario where the VPN (and rules and routes associated to it) will be created later in a separate terraform module and requires orchestration between multiple clouds.
 
 ### msk.tf
 
@@ -249,67 +236,28 @@ The username and password for the database are defined as variables in our `vari
 
 Pay close attention to the connector configuration found in `templates/psql-conector.json.tpl`, for more information on the possible values for this configuration file you can see [the documentation on the debezium website](https://debezium.io/documentation/reference/1.2/connectors/postgresql.html)
 
-# Ready to go! Deploy!
-That's it, now you are ready to deploy the terraformed infrastructure. From the `aws/terraform` subdirectory first do a quick `terraform plan` - you will be asked to enter the key name you generated at the beginning of this article, and you should have exported your AWS credentials:
+# AWS is ready! Now lets move over to the Google Cloud
+We have looked over at the codebase that will deploy the AWS side of things, now move over to [part 3]({{< ref multicloud_data_with_debezium_part3 >}}) to see the GCP side of the platform and take it for a test drive.
 
-```bash
-$ terraform plan
-var.bastion_key_name
-  Enter a value: lmurillo-aws
+Stay up to date with new experiments, join my mailing list!.
 
-Refreshing Terraform state in-memory prior to plan...
-The refreshed state will be used to calculate this plan, but will not be
-persisted to local or remote state storage.
+<!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://murillodigital.us10.list-manage.com/subscribe/post?u=c12ff1afa71003663de3762cc&amp;id=4cff0f72fe" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<label for="mce-EMAIL">Subscribe</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c12ff1afa71003663de3762cc_4cff0f72fe" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
 
-data.template_file.debezium_sql_initializer: Refreshing state...
-data.aws_iam_policy_document.debezium_fargate_iam_policy: Refreshing state...
-data.aws_ami.ubuntu: Refreshing state...
-
-------------------------------------------------------------------------
-.
-.
-.
-
-Plan: 23 to add, 0 to change, 0 to destroy.
-
-------------------------------------------------------------------------
-
-```
-
-You should see that 23 new resources will be created. If all looks good, go ahead and `terraform apply`! Once you're done you should see output similar to this:
-
-```bash
-Apply complete! Resources: 23 added, 0 changed, 0 destroyed.
-
-Outputs:
-
-bootstrap_brokers = b-2.murillodigitaldebezium.77nui4.c1.kafka.us-east-1.amazonaws.com:9092,b-1.murillodigitaldebezium.77nui4.c1.kafka.us-east-1.amazonaws.com:9092
-bootstrap_brokers_tls = b-2.murillodigitaldebezium.77nui4.c1.kafka.us-east-1.amazonaws.com:9094,b-1.murillodigitaldebezium.77nui4.c1.kafka.us-east-1.amazonaws.com:9094
-db_instance_address = terraform-20200718115331816800000002.c3cqhmzhqkow.us-east-1.rds.amazonaws.com
-debezium_bastion_ip = 3.83.8.152
-debezium_loadbalancer_endpoint = murillodigitaldebeziumlb-1310965208.us-east-1.elb.amazonaws.com
-zookeeper_connect_string = z-3.murillodigitaldebezium.77nui4.c1.kafka.us-east-1.amazonaws.com:2181,z-2.murillodigitaldebezium.77nui4.c1.kafka.us-east-1.amazonaws.com:2181,z-1.murillodigitaldebezium.77nui4.c1.kafka.us-east-1.amazonaws.com:2181
-```
-
-Lets take a quick look at the AWS console to see what we've created:
-
-Our RDS instance is ready to go, without public access and using the internal security group:
-
-![RDS Instance Running on AWS](/images/multicloud_data_with_debezium/screenshots/part2_rds.png)
-
-Our MSK cluster, with two broker nodes:
-
-![MSK Cluster on AWS](/images/multicloud_data_with_debezium/screenshots/part2_msk.png)
-
-Our ECS Cluster with one service running on Fargate:
-
-![ECS Cluster with Service on Fargate](/images/multicloud_data_with_debezium/screenshots/part2_ecs_cluster.png)
-
-And, if you go and look into the logs for the ECS task running Debezium, you will find the PostgreSQL connector is already running and connected to our inventory database running on RDS.
-
-![Debezium Logs on ECS Task](/images/multicloud_data_with_debezium/screenshots/part2_ecs_logs.png)
-
-# Let's see it in action
-
-Now that we have created all our resources, let's see how Debezium tracks changes to the database and publishes as messages to our MSK service:
-
+<!--End mc_embed_signup-->

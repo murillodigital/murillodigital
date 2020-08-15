@@ -6,9 +6,9 @@ date: "2020-07-27"
 ---
 ## Technology executives: it is possible to truly transform your enterprise's ability to deliver technology!
 
-If you are reading this post, I'm guessing you are a technology leader or engineer working with some enterprise organization, looking for ways to enhance your ability to innovate and deliver technology.
+This insight is the bottom line message I got from reading _[Lean Enterprise](https://amzn.to/30aQNuZ)_, **but it will not happen without a lot of effort**.
 
-And I have good news for you, it is possible to **truly transform** your enterprise's ability to build and deliver innovative technology solutions. This insight is the bottom line from reading _[Lean Enterprise](https://amzn.to/30aQNuZ)_, **but it will not happen without a lot of effort**.
+If you are reading this post, I'm guessing you are a technology leader or engineer working with some enterprise organization, looking for ways to enhance your ability to innovate and deliver technology.
 
 Read on to get a quick overview of some of the insights you'll find in _[Lean Enterprise](https://amzn.to/30aQNuZ)_.
 
@@ -116,6 +116,6 @@ You read it already, this book is just a high level overview, you now have a con
 
 So get started, try and adapt, none of these strategies are flawless and you will find both positive and negative aspects to all of them.
 
-**Fixing innovation is an act of creative innovation in itself**. Use all these concepts as references as tools, not as deterministic solutions.
+**Fixing innovation is an act of creative innovation in itself**. Use all these concepts as references and tools, not as deterministic solutions.
 
 Finally, please share your progress and what you learn through the process, comment and share this post and if you want to stay informed of what myself and others have learned, join my mailing list!
