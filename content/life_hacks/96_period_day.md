@@ -10,7 +10,7 @@ I had constantly experimented with new methods to squeeze more **hours** out of 
 
 Over the past few weeks, I've had an epiphany: What if told you we're used to splitting our day in an inefficient segment of time?
 
-I have discovered the power of *short*.
+**I have discovered the power of *short*.**
 
 We can have more than _24 ~splits of time~_ per day, it's just a matter of redefining the length of those splits. Your day doesn't have to be 24 hours long, when it can be 48 half-hour long, or 96 quarter-hour-long.
 
@@ -44,3 +44,26 @@ Splitting your activities in shorter segments also helps you find small pockets 
 Get out of the hourly segmenting of your day and explore with shorter time spans, you will see that over time, you will find that over time you will get better results and doing all those things you want to get done becomes easier.
 
 Tried it out? Let me know how it went!
+
+Stay up to date with new conten, join my mailing list!.
+
+<!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://murillodigital.us10.list-manage.com/subscribe/post?u=c12ff1afa71003663de3762cc&amp;id=4cff0f72fe" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<label for="mce-EMAIL">Subscribe</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c12ff1afa71003663de3762cc_4cff0f72fe" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->

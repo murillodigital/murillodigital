@@ -36,10 +36,35 @@ For true global exchange of services and revolutionary ideas, one size does not 
 
 Where I struggle
 ----------------
-I do have difficulty in understanding some aspects of what seems to be business as usual during Alibaba's early years: early staff members lived in precarious conditions and were seemingly oblivious to health and life balance while dedicating themselves to their work. The media repeatedly exposes this pattern, there have been a good deal of news that expose terrible working conditions by some Chinese businesses and it seems, at least at the beginning, Alibaba was not an exception.
+I do have difficulty in understanding some aspects of what seems to be business as usual during Alibaba's early years: early staff members lived in precarious conditions and were seemingly oblivious to health and life balance while dedicating themselves to their work.
+
+The media repeatedly exposes this pattern, there have been a good deal of news that expose terrible working conditions by some Chinese businesses and it seems, at least at the beginning, Alibaba was not an exception.
 
 I admit though, the above comment is not based on personal experience nor deep understanding of the cultural roots that defined the business, and are influenced by media, both aspects that as I mention just a few paragraphs back, skew my perspective.
 
 A good start
 ------------
 I think, in my journey to understand business elsewhere, [_Alibaba's World_](https://amzn.to/2Zl68J5) is a good start. It's a short read, written by somebody that shares some of my cultural background, Porter Erisman is an American man experiencing Alibaba and business in China as a foreigner - this is definitely a good starting point to what is evidently going to be a much larger quest where business is nothing but the result of a rich and complex combination of localized human culture and history.
+
+Stay up to date with new content, join my mailing list!.
+
+<!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://murillodigital.us10.list-manage.com/subscribe/post?u=c12ff1afa71003663de3762cc&amp;id=4cff0f72fe" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<label for="mce-EMAIL">Subscribe</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c12ff1afa71003663de3762cc_4cff0f72fe" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->

@@ -1,6 +1,6 @@
 baseURL = "https://www.murillodigital.com/"
 languageCode = "en-us"
-title = "Leonardo Murillo"
+title = "Leonardo Murillo's murillodigital.com"
 theme = "ananke"
 disqusShortname = "murillodigital"
 DefaultContentLanguage = "en"
@@ -22,7 +22,7 @@ enableRobotsTXT = true
   stackoverflow = ""
   rss = ""
   background_color_class = "bg-black"
-  recent_posts_number = 3
+  recent_posts_number = 5
   custom_css = ["css/custom.css"]
   mainSections = ["tech_talk", "good_reads", "life_hacks"]
 
