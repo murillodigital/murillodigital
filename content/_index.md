@@ -1,14 +1,14 @@
 ---
 title: "Leonardo Murillo"
 featured_image: '/images/home_6.png'
-description: "Cloud Architecture and Information Technology, Business, The Mind Leadership, and The Fuuture"
+description: "Cloud Architecture and Information Technology, Business, The Mind, Leadership, and The Future"
 ---
 
 Welcome! My name is **Leonardo Murillo**, I'm a cloud solutions architect and systems engineer, technologist and entrepreneur and this is my opinionated place on the web. All reviews and opinions are my own.
 
 I'm the proud father of two boys and a girl, based off [Costa Rica](https://en.wikipedia.org/wiki/Costa_Rica) but frequent traveler.
 
-**Stay up to date** with new content,  **join my mailing list**. I send out one weekly email with opinions and links to any new articles or experiments I'm working on.
+**Stay up to date** with new content,  **join my mailing list**. I send out one weekly email on new posts and technical experiments I'm working on.
 
 <!-- Begin Mailchimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
