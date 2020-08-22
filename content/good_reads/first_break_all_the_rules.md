@@ -91,7 +91,7 @@ Which also leads to another important learning from [First, Break All The Rules]
 
 # Built on huge amount of data and statistics
 
-Can you trust these findings? That's really up to you to determine, the one thing I can share with you are sheer numbers that represent the data on top of which the recommendations where built:
+Can you trust these findings? That's really up to you to determine, the one thing I can share with you are sheer numbers that represent the data on top of which the recommendations were built:
 
 - The Q12 Survey was the result of interviewing more than 1 million employees.
 - The Meta Analysis was the outcome of 339 research studies across 230 organizations in 49 industries with employees in 73 countries.
