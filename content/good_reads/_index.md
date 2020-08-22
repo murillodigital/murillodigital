@@ -3,6 +3,7 @@ title: "Good reads"
 description: "Not all readers are leaders, but all leaders are readers - Harry Truman"
 featured_image: '/images/good_reads.jpg'
 menu: main
+show_reading_time: true
 ---
 **Welcome to my Good Reads page**! Here you will find comments, reviews and insights on many of the books I reads.
 

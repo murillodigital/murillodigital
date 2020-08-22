@@ -8,7 +8,7 @@ googleAnalytics = "UA-68779688-2"
 enableRobotsTXT = true
 
 [params]
-  favicon = ""
+  favicon = "favicon.ico"
   site_logo = ""
   description = "Leonardo Murillo - Technology, business, the mind and our future"
   facebook = ""
