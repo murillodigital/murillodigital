@@ -260,7 +260,7 @@ module "gcp_aws" {
 }
 ```
 
-All you have to do is run `terraform apply`, provide your AWS ssh key name, and wait for the magic to happen. Click here to see a video of the full solution in operation!
+All you have to do is run `terraform apply`, provide your AWS ssh key name, and wait for the magic to happen.
 
 Give this a try and let me know how it went with a comment. Stay up to date with new experiments, join my mailing list!.
 
