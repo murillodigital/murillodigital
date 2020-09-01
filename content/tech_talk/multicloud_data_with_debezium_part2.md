@@ -3,6 +3,7 @@ title: "Multicloud data with Debezium - Part 2: Data source in AWS"
 date: "2020-07-10"
 description: "Our data source, the inventory database running in Amazon Web Services"
 featured_image: "/images/debezium.jpeg"
+author: "Leonardo Murillo"
 ---
 Welcome to Part 2 of this 3-part series on Multicloud Data with Debezium - in this post we will be building the **source of our data, and will be implementing Debezium for tracking and streaming data changes in AWS**.
 

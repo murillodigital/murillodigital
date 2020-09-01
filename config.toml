@@ -9,7 +9,7 @@ enableRobotsTXT = true
 
 [params]
   favicon = "favicon.ico"
-  site_logo = ""
+  site_logo = "/images/leo.png"
   description = "Leonardo Murillo - Technology, business, the mind and our future"
   facebook = ""
   twitter = "https://twitter.com/murillodigital"

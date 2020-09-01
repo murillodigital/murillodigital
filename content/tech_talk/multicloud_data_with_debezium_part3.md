@@ -3,6 +3,7 @@ title: "Multicloud data with Debezium - Part 3: Data Change History in BigQuery"
 date: "2020-07-21"
 description: "Using BigQuery in GCP as our historical data change repository"
 featured_image: "/images/debezium.jpeg"
+author: "Leonardo Murillo"
 ---
 Welcome to Part 3 of this series on multicloud data with Debezium. For those just joining us, in [part 1]({{< ref multicloud_data_with_debezium_part1 >}}) you can learn about the high level architecture of what we will be building and get a quick introduction to Debezium as a change data capture tool.
 

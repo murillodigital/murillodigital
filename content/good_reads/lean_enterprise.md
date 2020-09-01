@@ -3,6 +3,7 @@ title: "Lean Enterprise"
 description: "How High Performance Organizations Innovate at Scale"
 featured_image: '/images/lean_enterprise.jpg'
 date: "2020-07-27"
+author: "Leonardo Murillo"
 ---
 ## Technology executives: it is possible to truly transform your enterprise's ability to deliver technology!
 

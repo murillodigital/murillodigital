@@ -3,6 +3,7 @@ title: "Snowball"
 description: "Warren Buffett and The Business of Life"
 featured_image: '/images/snowball.png'
 date: "2020-07-19"
+author: "Leonardo Murillo"
 ---
 ## The fascinating life of Warren Buffett
 

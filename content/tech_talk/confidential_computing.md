@@ -3,6 +3,7 @@ title: "Confidential Computing"
 date: "2020-08-16"
 description: "Securing data's last frontier, and further enabling edge computing and the cloud"
 featured_image: '/images/confidential-computing.jpg'
+author: "Leonardo Murillo"
 ---
 If you haven't heard the buzz about *confidential computing*, I'm sure you will very soon. I hope with this post you will:
 

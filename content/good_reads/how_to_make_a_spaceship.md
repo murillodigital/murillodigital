@@ -3,6 +3,7 @@ title: "How to Make a Spaceship"
 description: "A Band of Renegades, an Epic Race, and the Birth of Spaceflight"
 featured_image: '/images/how_to_make_a_spaceship.jpg'
 date: "2020-05-15"
+author: "Leonardo Murillo"
 ---
 ## The new era of space travel is upon us
 

@@ -3,6 +3,7 @@ title: "First, Break All The rules"
 description: "What the world's greatest managers do differently"
 featured_image: '/images/first_break_all_the_rules.jpg'
 date: "2020-08-19"
+author: "Leonardo Murillo"
 ---
 # What does it take for a company to excel?
 I'm sure if you were to ask most people: _what do you consider critical to guarantee revenue and client satisfaction in a corporation?_, most of them would likely think in terms of "a great product", or "a customer first vision".

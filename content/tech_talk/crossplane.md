@@ -3,6 +3,7 @@ title: "The Open Application Model and Crossplane - Part 1"
 description: "An agnostic way to build application centric platforms and infrastructure in a team centric way, across clouds"
 date: "2020-08-26"
 featured_image: "/images/crossplane_oam/oam_hero.jpg"
+author: "Leonardo Murillo"
 ---
 # What you'll get out of this series
 
