@@ -4,6 +4,8 @@ description: "An agnostic way to build application centric platforms and infrast
 date: "2020-08-26"
 featured_image: "/images/crossplane_oam/oam_hero.jpg"
 author: "Leonardo Murillo"
+images:
+- "/images/crossplane_oam/oam_hero.jpg"
 ---
 # What you'll get out of this series
 
