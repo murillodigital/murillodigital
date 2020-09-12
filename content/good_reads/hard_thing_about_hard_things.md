@@ -6,7 +6,6 @@ featured_image: "/images/hard_thing_about_hard_things.jpg"
 author: "Leonardo Murillo"
 images:
 - "/images/hardthings.jpg"
-draft: true
 ---
 # A guidebook for the challenges of the founder-CEO
 
