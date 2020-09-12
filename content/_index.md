@@ -1,6 +1,6 @@
 ---
 title: "Leonardo Murillo"
-featured_image: '/images/home_6.png'
+featured_image: '/images/home_6.jpg'
 description: "Cloud Architecture and Information Technology, Business, The Mind, Leadership, and The Future"
 ---
 
