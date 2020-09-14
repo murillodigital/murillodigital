@@ -6,7 +6,6 @@ featured_image: "/images/finops.jpg"
 author: "Leonardo Murillo"
 images:
 - "/images/finops.jpg"
-draft: true
 ---
 # The financials peril of infinite capacity
 
