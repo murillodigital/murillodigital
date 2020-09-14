@@ -7,7 +7,7 @@ author: "Leonardo Murillo"
 images:
 - "/images/finops.jpg"
 ---
-# The financials peril of infinite capacity
+# The financial perils of infinite capacity
 
 I see a very common and dangerous pattern across many of the teams I support, with regard to their cloud utilization habits: there isn't a clear sense of the financial impact of their development output.
 
