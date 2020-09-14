@@ -4,9 +4,9 @@ featured_image: '/images/home_6.jpg'
 description: "Cloud Architecture and Information Technology, Business, The Mind, Leadership, and The Future"
 ---
 
-Welcome! My name is **Leonardo Murillo**, I'm a cloud solutions architect and systems engineer, technologist and entrepreneur and this is my opinionated place on the web. All reviews and opinions are my own.
+Welcome! My name is **Leonardo Murillo**, I'm a CTO, cloud solutions architect and systems engineer, technologist and entrepreneur and this is my opinionated place on the web. All reviews and opinions are my own.
 
-I'm the proud father of two boys and a girl, based off [Costa Rica](https://en.wikipedia.org/wiki/Costa_Rica) but frequent traveler.
+I'm the proud father of a girl and two boys, based off [Costa Rica](https://en.wikipedia.org/wiki/Costa_Rica) but frequent traveler.
 
 **Stay up to date** with new content,  **join my mailing list**. I send out one weekly email on new posts and technical experiments I'm working on.
 
