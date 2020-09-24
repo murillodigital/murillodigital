@@ -6,7 +6,6 @@ featured_image: "/images/cloudevents_hero.jpg"
 author: "Leonardo Murillo"
 images:
 - "/images/cloudevents-icon-color.png"
-draft: true
 ---
 # An event driven world
 The world of systems architecture has been through accelerated change.
