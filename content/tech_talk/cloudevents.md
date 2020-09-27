@@ -24,7 +24,7 @@ Systems must consume and publish events that vary in terms of structure and avai
 - No portability and no common libraries.
 
 # Enter CloudEvents
-CloudEvents is an effort focused on defining a standard specification to solve these issues.
+[CloudEvents](https://cloudevents.io/) is an effort focused on defining a standard specification to solve these issues.
 
 The specification considers the schema of the event, providing defined patterns as to how common as well as custom attributes should be expressed.
 
