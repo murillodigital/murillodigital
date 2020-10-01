@@ -6,7 +6,7 @@ date: "2020-07-03"
 ---
 How many times have you said _I wish my day had more than 24 hours_?
 
-I had constantly experimented with new methods to squeeze more **hours** out of my day and extend my time to be able to do more and be more efficient at juggling all the things I have to do with all those I want to do in a finite amount of time that seems to be always running out.
+I had constantly experimented with new methods to squeeze more **hours** out of my day, and extend my time to be able to do more and be more efficient at juggling all the things I have to do, together with all those I want to do, in a finite amount of time which seems to be always running out.
 
 Over the past few weeks, I've had an epiphany: What if told you we're used to splitting our day in an inefficient segment of time?
 
@@ -41,7 +41,7 @@ Bottom line is, the key to success is long term consistency - short bursts work 
 
 Splitting your activities in shorter segments also helps you find small pockets that would otherwise have gone wasted by social media and similar, arguably wasteful uses of time.
 
-Get out of the hourly segmenting of your day and explore with shorter time spans, you will see that over time, you will find that over time you will get better results and doing all those things you want to get done becomes easier.
+Get out of the hourly segmenting of your day and explore with shorter time spans, you will see that over time you will get better results, and doing all those things you want to get done becomes easier.
 
 Tried it out? Let me know how it went!
 

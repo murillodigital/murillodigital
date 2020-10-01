@@ -113,7 +113,7 @@ It is hard to put in a single article the myriad of quotes and insights I noted 
 
 On patience:
 
-> He helped her understand that it was always a mistake to pay too much for something you wanted. Impatience as the enemy.
+> He helped her understand that it was always a mistake to pay too much for something you wanted. Impatience is the enemy.
 
 On money:
 
