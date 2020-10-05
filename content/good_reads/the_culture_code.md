@@ -121,7 +121,7 @@ On the other hand, the actions a leader must take in order to build a culture sk
 
 As an engineering leader, I've witnessed the accelerated transformation into remote work. Engineers are uniquely positioned so they can perform their knowledge work from anywhere as long as they have an internet connection.
 
-I see, and experience a lot of the personal value of that approach, I for one also work from home, and perform my role as CTO for a company that is almost 4000km away. I'm fully present in the lives of my three children, and feel quite satisfied with my balance in terms of personal objectives (eg. work) and my family and collective life.
+I see, and experience a lot of the personal value of that approach, I for one also work from home, and perform my role as CTO for a company that is almost 4000km away. I'm fully present in the lifes of my three children, and feel quite satisfied with my balance in terms of personal objectives (eg. work) and my family and collective life.
 
 However, I'm not completely satisfied with this new paradigm, or at least with the tools we currently have towards building solid cultures in this new remote-first world.
 
