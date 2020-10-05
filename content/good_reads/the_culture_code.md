@@ -1,6 +1,6 @@
 ---
 title: "The Culture Code"
-description: "The secret of highly successful groups"
+description: "The secrets of highly successful groups"
 featured_image: "/images/the_culture_code.jpg"
 date: "2020-10-03"
 author: "Leonardo Murillo"
