@@ -6,6 +6,7 @@ date: "2020-10-03"
 author: "Leonardo Murillo"
 images:
 - "/images/the_culture_code.jpg"
+draft: true
 ---
 # Culture eats strategy for breakfast
 
