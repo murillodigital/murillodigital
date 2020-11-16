@@ -586,9 +586,9 @@ Waypoint definitely focuses on developer side simplicity, and hides a lot of the
 
 The solution is clearly not production ready and there is still a big gap in it reaching that state. Security, the difficulties in uninstalling the full solutions as well as releases deployed with it and authorization are likely the first items in the list to require resolution before this can start moving closer to mission critical environments.
 
-Another pleasant surprise is that, for being such an early project, the documentation is quite solid.
-
 Nevertheless, I was pleasantly surprised on the simplicity in getting everything running and the example applications deployed, and will definitely track this going forward as I'm sure it has a lot of potential.
+
+Another pleasant surprise is that, for being such an early project, the documentation is quite solid.
 
 Get notified of new experiments and articles on cloud native technologies, join my mailing list!.
 
