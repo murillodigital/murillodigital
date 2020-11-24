@@ -73,7 +73,7 @@ What we have learned in software engineering is that:
 
 _What is the takeaway engineering can give the rest of the organization?_
 
-Revamp processes gradually with small objectives focused on a more immediate horizon. Now, don't get me wrong, this does not mean that long term strategy is irrelevant, it of course is, but that long term strategy is a moving target that must be taken for what it is, an imprecise and biased speculation of the future that must be constantly reevaluated.
+Revamp processes gradually with small objectives focused on a more immediate horizon. Now, don't get me wrong, this does not mean that long term strategy is irrelevant, it of course is critical for success, but that long term strategy is a moving target that must be taken for what it is, an imprecise and biased speculation of the future that must be constantly reevaluated.
 
 The closer the timeframe the better the definition, make sure your organizational changes can be delivered iteratively and gradually, and if you have already followed the advice on observability, evaluate the output metrics of each change to have data that validates whether the next step is reinforced or must change.
 
