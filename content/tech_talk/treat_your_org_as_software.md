@@ -9,7 +9,7 @@ images:
 ---
 # Thinking in terms of systems and cycles
 
-Building and evolving a technical organization has components of both science and art. This description is not unusual when talking about people, and even more so when talking about systems made up of humans.
+Building and evolving an organization has components of both science and art. This description is not unusual when talking about people, and even more so when talking about systems made up of humans.
 
 Humans are quite complex, and none of us came with an instruction manual. The dynamics of human interaction happen at many levels, and to drive people in harmony towards a common objective requires tremendous effort and a bit of magic.
 
@@ -19,7 +19,7 @@ Interestingly, we have learned a lot from systems of interconnected and highly c
 
 Yet, a lot of the strategies we have identified to build and operate highly complex systems of creatively built components that must hit the right balance in terms of independence and interdependence, have not quite transferred over to the organizations in which those systems of software engineers are embedded.
 
-In this post I will elaborate on analogies inspired by the great wealth of knowledge that has been derived from software engineering, and apply them to the organizational structures and processes.
+In this post I will elaborate on analogies inspired by the great wealth of knowledge that has been derived from software engineering, and apply them to organizational structures and processes.
 
 # Decoupled, well documented and with clear interfaces
 
@@ -43,7 +43,7 @@ Build common patterns and means of communication across groups in order to satis
 
 Observability is a recent buzzword in the software engineering world, and it has grown in popularity for a reason.
 
-Understanding behavior and evaluating performance when systems span service and environment boundaries is a much more complex endeavor in comparison to was required in understanding the operation of a monolithic system.
+Understanding behavior and evaluating performance when systems span service and environment boundaries is a much more complex endeavor in comparison to what was required in understanding the operation of a monolithic system.
 
 The relevance of observability goes far beyond simply "monitoring", and rather becomes the foundation for continuous improvement, and the means to validate whether real value is derived from effort, which is what we're all about, work for the sake of work makes little sense.
 
@@ -93,7 +93,7 @@ If you are implementing organizational change, allow yourself the opportunity to
 
 And if it didn't go as planned, that's fine, have clarity and communicate ahead of time what metrics will be used to identify the success in the iteration and have a clear concept of how things would go back to their previous state if things don't go as planned.
 
-_Waht does this mean in terms of the non-technical organization?_
+_What does this mean in terms of the non-technical organization?_
 
 Imagine you are going to promote somebody. Define clearly what criteria will be used to determine the change successful, and provide a path for the team member to revert to her previous role should either party determine that the metrics have not been met.
 
