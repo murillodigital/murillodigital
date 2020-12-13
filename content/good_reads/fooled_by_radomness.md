@@ -5,7 +5,7 @@ featured_image: "/images/cant_hurt_me.jpg"
 date: "2020-11-23"
 author: "Leonardo Murillo"
 images:
-- "/images/cant_hurt_me.jpg"
+  - "/images/cant_hurt_me.jpg"
 draft: true
 ---
 # You are much less in control than you think

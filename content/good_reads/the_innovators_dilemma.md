@@ -5,8 +5,8 @@ featured_image: "/images/cant_hurt_me.jpg"
 date: "2020-12-12"
 author: "Leonardo Murillo"
 images:
-- "/images/cant_hurt_me.jpg"
-  draft: true
+  - "/images/cant_hurt_me.jpg"
+draft: true
 ---
 # The fundamental premise
 
