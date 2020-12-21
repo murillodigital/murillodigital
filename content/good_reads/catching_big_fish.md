@@ -1,11 +1,11 @@
 ---
-title: "The innovator's dilemma"
-description: "When things around you change, doing the right thing might be the wrong thing. Plus the gravity pull of the well established."
-featured_image: "/images/innovators_dilemma.png"
+title: "Catching big fish"
+description: "Transcendental meditation and thoughts on film making and inspiration"
+featured_image: "/images/catching_big_fish.png"
 date: "2020-12-12"
 author: "Leonardo Murillo"
 images:
-  - "/images/innovators_dilemma.png"
+- "/images/catching_big_fish.png"
 draft: true
 ---
 # The fundamental premise
