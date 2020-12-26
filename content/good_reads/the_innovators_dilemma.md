@@ -24,17 +24,23 @@ I can't help but see the commonality, and I'll attempt to elaborate on how cultu
 
 Christensen proposes that there are two fundamentally different types of change, two ways in which technology can develop.
 
-- **Sustaining evolution**: These are developments that occur within an already established paradigm. They improve what already exists, and usually happens incrementally over time.
+- **Sustaining evolution**: These are developments that occur within an already established paradigm. They improve what already exists, and usually happen incrementally over time.
 
 - **Disruptive evolution**: These are changes that create new markets and value networks, and eventually disrupt existing ones. They are driven by significant alterations in a product or service in ways that users did not expect.
 
+It takes a dramatically different approach for an organization to be able to succeed in developing either path, and for all practical purposes they are exclusive of one another: the metrics, processes and culture required to be effective in either type of development are so fundamentally different from one another, that they can't coexist.
+
 # The implicit choice of everything you will not do
 
-When a company builds its internal culture, the mindset usually follows a path towards a specific objective, towards what you want to accomplish, but there is an implicit, much broader decisions that is happening at the same time, and usually outside the line of sight of the leader, the choice of everything the organization will not do, which as that wich is desired solidifies, becomes ever harder to achieve.
+When a company builds its internal culture and processes, leaders are usually laser focused in one very specific set of objectives, towards what they want to accomplish. There is an implicit, much broader decision that is happening at the same time, and usually outside the line of sight of the leader: by choosing what you want your organization to succeed with, the choice of everything the organization will not do is also being done. As time progresses, that established goal solidifies, and the elasticity required to follow any other path reduces.
 
-And it makes total sense, considering the rather voluminous list of things one gets not to do, in exchange for a handful of options that one does - it would be rather paralyzing to make decisions if one had to consider all the alternative possibilities.
+Interestingly, most would argue that this is indeed a desired pattern, it makes total sense, considering the rather voluminous list of things one gets not to do, in exchange for a handful of options that one does - it would be rather paralyzing to make decisions if one had to consider all the alternative possibilities or expect to build an organization that is expected to be "good at everything".
 
 # Structural flexibility
+
+As companies mature, their structure becomes ever more solid. There are many factors that drive this process, one that is indispensable towards maximizing the potential to scale.
+
+A leader wants to build an organization with such strong culture and such clearly defined decision making criteria that she can trust that the choices made throughout the 
 
 # Innovators dilemma 
 
