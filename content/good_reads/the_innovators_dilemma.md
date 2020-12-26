@@ -10,17 +10,23 @@ draft: true
 ---
 _The innovator's dilemma_ by Clayton M. Christensen is another one of those books that have become obligatory reading in Silicon Valley circles.
 
-The author looks at a handful of industries that have gone through multiple cycles of technological disruption, and attempts to identify what was it about some companies that allowed them to quickly and profitably adapt to the advent of that disruptive technology, and why the majority, once exposed to such dramatic change, failed to adapt and succumbed.
+The author looks at a handful of industries that have gone through multiple cycles of technological disruption, and attempts to identify what was it about some companies that allowed them to survive disruption, while the majority, once exposed to such dramatic change, failed to adapt and succumbed.
 
-To me, the insights are not just applicable to products and technologies and their effect in markets, but also can be applied to internal organizational structure and in the adaptation to any disruptive change, including cultural and mindset changes.
+There were quite a few concepts exposed by Christensen that triggered my curiosity, in terms of technological evolution, regarding organizational elasticity and ability to change, and of course the controversial concept that doing the right thing might be the cause of your demise.
+
+I deal with digital transformation. Most of my clients and the projects in which I participate are in one way or another eliciting change, evolution, in the organization.
+
+Think of DevOps, a fundamentally cultural movement, one in which success hinges only partially (some would argue, if at all), from technological factors, but exposes the organization to a usually disruptive change in terms of processes, dialogue and mindset.
+
+I can't help but see the commonality, and I'll attempt to elaborate on how cultural and organizational change can be sustaining or disruptive, and that regardless of whether it's about a technology product or service, or the culture of an organization, the challenges to overcome (as well as the usual pitfalls) are similar. 
 
 # Two types of change
 
-Christensen proposes that there are two fundamentally different types of change, two ways technology can develop, 
+Christensen proposes that there are two fundamentally different types of change, two ways in which technology can develop.
 
 - **Sustaining evolution**: These are developments that occur within an already established paradigm. They improve what already exists, and usually happens incrementally over time.
 
-- **Disruptive evolution**: These are changes that create new markets and value networks, and eventually disrupt existing ones. They are driven by 
+- **Disruptive evolution**: These are changes that create new markets and value networks, and eventually disrupt existing ones. They are driven by significant alterations in a product or service in ways that users did not expect.
 
 # The implicit choice of everything you will not do
 
