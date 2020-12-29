@@ -6,6 +6,7 @@ featured_image: "/images/opentelemetry.jpg"
 author: "Leonardo Murillo"
 images:
 - "/images/opentelemetry.jpg"
+draft: true
 ---
 Before going into Open Telemetry, the CNCF Project, I want to use the opportunity to also discuss some basic 
 
