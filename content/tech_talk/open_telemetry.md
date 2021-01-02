@@ -77,14 +77,31 @@ Metrics are very powerful tools to gain visibility as scale increases, and given
 
 ## Traces
 
-In modern distributed architectures, satisfying some user expectation usually involves not one, but various independent systems over a period of time. Understanding system functioning and performance of top of service oriented and microservice based architectures has always been a complicated task, thanks to the fact that user experience is actually bound to numerous systems, any of which may be experiencing degraded performance or be unavailable.
+In modern distributed architectures, satisfying some user expectation usually involves not one, but various independent systems over a period of time. Understanding system functionality and performance on top of service oriented and microservice based architectures has always been a complicated task, thanks to the fact that user experience is actually bound to numerous systems, any of which may be experiencing degraded performance or be unavailable at some point in time.
 
 Traces solve that problem by building a representation of events related to one another, providing end-to-end visibility of user requests as it traverses a distributed architecture. Each event in the chain of causal events is considered a _span_, a group of _spans_ is deemed a _trace_.
 
 # What is OpenTelemetry
 
-The OpenTelemetry project is a relatively recent initiative born out of the joining of two preexisting initiative, OpenTracing and OpenCensus.
+The OpenTelemetry project is a relatively recent initiative born out of the join of two preexisting initiative: OpenTracing and OpenCensus. The project is currently member of the Cloud Native Computing Foundation as a Sandbox initiative.
+
+OpenTelemetry is an observability framework. What that means is, the project aims to provide tools, libraries, agents and other components required to instrument your solution across the full stack, and allow you to capture and publish telemetry data. Another important component is the definition of a common specification that guarantees a level of compatibility for all tools, internal and external to the project, that follow it.
+
+Most OpenTelemetry components are currently in _beta_ are general availability release candidates are already in the horizon, and all the various SDKs, 
+
+You can find the codebase for the various OpenTelemetry projects in their GitHub organization at [https://github.com/open-telemetry](https://github.com/open-telemetry), the organization holds repositories for the quite impressive list of SDKs already available for most current programming languages.
 
 # Why is OpenTelemetry important
+
+There are many important aspects as to why a project such as OpenTelemetry is important in the Cloud Native Computing landscape:
+
+## Interoperability
+
+
+## Extensibility
+
+## Standardization:
+
+## Community Outreach
 
 # Tools and Ecosystem
