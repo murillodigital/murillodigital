@@ -1,5 +1,5 @@
 ---
-title: "Open Telemetry"
+title: "Observability and OpenTelemetry"
 description: "A cockpit for your cloud native solution"
 date: "2020-12-21"
 featured_image: "/images/opentelemetry.jpg"
@@ -12,52 +12,79 @@ Before going into Open Telemetry, the CNCF Project, I want to use the opportunit
 
 # What is telemetry and observability?
 
-Telemetry, in its simplest form, means gathering data that can be used to understand performance and utilization of your application across its multiple components, in other words, proactively and programmatically deliver data that can be used to track the behavior of your system as data and requests move throughout services.
+Telemetry, in its simplest form, means gathering data that can be used to understand performance and utilization of your application across its multiple components, in other words, proactively and programmatically deliver data that can be used to track the behavior of your system as  requests move throughout services.
 
-Telemetry has been historically used for various purposes, from debugging and troubleshooting to monitoring, however, as cloud native solutions become common, handle ever-increasing scale, and architectures become distributed and stateless, the concept has evolved into the recent trend of _observability_.
+Telemetry has been historically used for various purposes, from debugging and troubleshooting to monitoring, however, as cloud native solutions become common, handle ever-increasing scale, and architectures become distributed and stateless, the concept has evolved into the recent practice of _observability_.
 
-Observability as a practice has many practical uses, encompassing both the more traditional use cases I mentioned before (eg. monitoring and troubleshooting), but also serves as the foundation for a new trend into understanding not just the bevahior of your system, but also the impact that behavior has on your users, the value those users are deriving from your solution, and direct the efforts and resources dedicated towards enhancing your product's performance and user experience.
+Observability as a practice has many uses, encompassing both the more traditional cases I mentioned before (eg. monitoring and troubleshooting), but also serving as the foundation for our increasing need to understand not just the behavior of our systems, but also the impact of that behavior on our users, the value those users are deriving from our solution, and how to direct our efforts and resources towards enhancing our product's performance and user experience.
 
-## Culture shift
+## Shifting our culture on failure
 
-The nature of cloud native architecture, including concepts such as microservices and functions as a service, have triggered an important change in how failure is evaluated and handled.
+The nature of cloud native architecture, including concepts such as microservices and functions as a service, has triggered important changes in how failure is evaluated and handled.
 
-Why is cloud native architecture producing this change? I think there are multiple issues to consider: 
+Why is cloud native architecture producing these changes? I think there are multiple reasons to consider: 
 
 - Cloud native infrastructure is inherently dynamic - services scale up and down, new services are added and automatically discovered, data and requests cross all sorts of boundaries.
-- Cloud native architecture is highly distributed. To understand systems behavior you must track and correlate data and request flowing through a myriad of components.
+- Cloud native architecture is highly distributed. To understand systems behavior you must track and correlate data and requests flowing through a myriad of components.
 - Cloud native deployments are immutable, we don't _fix malfunctioning "things"_ anymore, we _replace malfunctioning things with new, correctly functioning ones_.
 
-The characteristics of this new system paradigm produce a dramatic change in what and how we track behavior and performance, and our approach to failure. From my perspective, there are very positive outcomes of this (still ongoing) shift. For one, we seem to be finally maturing from the simple realization that everything will fail, to actual acceptance, thus enabling a mindset that knows that expecting perfect availability isn't just futile and unrealistic, but also likely much more costly than what satisfactory reliability requires.
+The characteristics of this new, much more complex, system paradigm produce a dramatic change in what and how we track behavior and performance, and our approach to failure. The mechanisms that we used for gaining visibility into our monolithic, or on-prem solutions simply no longer make the cut.
 
-On the one hand, the realization that things will always fail has influenced everything, from designing for failure to begin with, all the way to not expecting to avoid failure rather manage and learn from it.
+From my perspective, there are very positive outcomes to this -still ongoing- shift:
 
-The concerns of what we track are also changing, as we progress from bare metal, to virtualization and now into the realm of the cloud and orchestrated containers. In the past we worried a lot about whether we had provisioned enough capacity, whether our fail-over was getting traffic, or other such concerns, but going into the cloud and containers, we have different concerns, are we scaling efficiently?
+For one, we seem to be finally maturing from the simple realization that everything will fail, to actual acceptance, thus enabling a mindset that understands the expectation of perfect availability isn't just futile and unrealistic, but also likely much more costly than what satisfactory reliability requires.
 
-It has become much more of a concern whether we have enough capacity provisioned as opposed to capping the autoscaling capacity of our solutions and gaining the necessary insights to utilize the seemingly infinite scale available to us effectively.
+In the words of Google on user defined reliability:
 
-Another important component in this shift is how, given microservices, failures are harder to see as they usually become (as desired) very much localized.
+> Your systems should be reliable enough that users are happy, but not excessively reliable such that the investment is unjustified.
 
+This new _embracing of failure as an inevitability_ has influenced everything, from design and architecture, all the way to how we manage failure and gain insights from it as opposed to trying to simply avoid it.
 
+## New culture breeds new teams, new teams need new indicators
 
-## A new set of key performance indicators
+The paradigm shifts we've discussed above turn into a need for a new structure and sets of skills in an organization, and usually, the metrics used to guide that new set of skills also need to be redefined.
 
-Evolution of SLAs into SLOs and SLIs
+I believe there are a couple of other trends, also growing in spread and maturity, that are very much related to observability. One could argue that, without solid observability in place, it would be impossible to accomplish the transformation:
+
+- Trend 1 - **The rise of the SRE**
+- Trend 2 - **The use of SLOs and SLIs in addition to SLAs**
+
+Both these trends are strongly dependent on the availability of meaningful data to drive decisions, design and implementation, observability is what makes that data available.
 
 # The verticals of observability
 
-In the modern cloud native world, three core verticals have been identified as critical for effective systems observability:
+Now that we have a bit of a sense as to where observability is coming from, and what other areas are associated to it, lets go into some detail as to what observability is all about.
+
+In most literature, you will find references to the three pillars or verticals of observability. The pillars are the three primary types of data, each with different characteristics and objectives, that you can use to instrument your solution:
 
 - Logs
 - Metrics
 - Traces
 
-# Deriving value from telemetry data
+Although there are other types of observability data that can be gathered, we will focus on these three primary data types. Let's look at each one in a bit more detail:
 
-# The importance of telemetry in cloud native architecture
+## Logs
 
-# OpenTelemetry and the Cloud Native Community
+Logs are by far the more established and usual type of observability data that most developers already use. Logs are immutable, timestamped, free-form records of events occurring in the system. They usually provide relatively verbose information associated to process specific behavior. They're very effective in troubleshooting scenarios during development.
 
-# How to start instrumenting
+The effectiveness of logs decreases with scale, just as the complexity and requirements in managing and storing them increases, which is why log levels are used to increase or decrease verbosity based on the environment where the solution is running.
 
-# Tools and ecosystem
+## Metrics
+
+Metrics are purely quantitative indicators, representing some measured data over a period of time. Metrics are stored in time-series databases, and are enriched with metadata to enable querying and relating them to one another or components of the system. One usually finds some basic metric types in most implementations such as gauges, counters and histograms.
+
+Metrics are very powerful tools to gain visibility as scale increases, and given their mostly numeric nature, enable engineers to perform math and computations with them.
+
+## Traces
+
+In modern distributed architectures, satisfying some user expectation usually involves not one, but various independent systems over a period of time. Understanding system functioning and performance of top of service oriented and microservice based architectures has always been a complicated task, thanks to the fact that user experience is actually bound to numerous systems, any of which may be experiencing degraded performance or be unavailable.
+
+Traces solve that problem by building a representation of events related to one another, providing end-to-end visibility of user requests as it traverses a distributed architecture. Each event in the chain of causal events is considered a _span_, a group of _spans_ is deemed a _trace_.
+
+# What is OpenTelemetry
+
+The OpenTelemetry project is a relatively recent initiative born out of the joining of two preexisting initiative, OpenTracing and OpenCensus.
+
+# Why is OpenTelemetry important
+
+# Tools and Ecosystem
