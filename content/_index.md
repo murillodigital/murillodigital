@@ -1,10 +1,14 @@
 ---
 title: "Leonardo Murillo"
-featured_image: '/images/home_6.jpg'
+featured_image: '/images/home_7.jpg'
 description: "Cloud Architecture and Information Technology, Business, The Mind, Leadership, and The Future"
 ---
 
-Welcome! My name is **Leonardo Murillo**, I'm a CTO, cloud solutions architect and systems engineer. Technology, entrepreneurship and futurism are some of my passions and this is my opinionated place on the web. All reviews and opinions are my own.
+# Welcome!
+
+My name is **Leonardo Murillo**, I'm a CTO and Entrepreneur. I'm passionate about Cloud Native Solutions, DevOps and AllTheOps that followed. I'm also organizer of the DevOps + Cloud Native Community in Costa Rica and a DevOps Institute Ambassador.
+
+Technology, entrepreneurship and futurism are some of my interests and this is my opinionated place on the web. All reviews and opinions are my own.
 
 I'm the proud father of a girl and two boys, based off [Costa Rica](https://en.wikipedia.org/wiki/Costa_Rica) but frequent traveler.
 
