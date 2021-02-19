@@ -2,32 +2,14 @@
 title: "Catching big fish"
 description: "Transcendental meditation and thoughts on film making and inspiration"
 featured_image: "/images/catching_big_fish.png"
-date: "2020-12-12"
+date: "2020-02-04"
 author: "Leonardo Murillo"
 images:
 - "/images/catching_big_fish.png"
 draft: true
 ---
-# The fundamental premise
+To be quite honest, the name David Lynch is one that merely rang a bell, I wasn't too familiar with any of his films, and the closest I had gotten to his work was out of a recommendation from an old friend in a previous life to watch Twin Peaks.
 
-# The implicit choice of everything you will not do
+I've been meditating for quite some time - if you follow me or know me closely you likely have already and repeatedly heard my thoughts on mindfulness and meditation as indispensable components towards realizing one's own potential. Through meditation I have overcome weaknesses, found focus and in many ways _awakened_.
 
-When a company builds its internal culture, the mindset usually follows a path towards a specific objective, towards what you want to accomplish, but there is an implicit, much broader decisions that is happening at the same time, and usually outside of the view frustum of leader, the choice of everything the organization will not do, which as that wich is desired solidifies, becomes ever harder to achieve.
-
-And it makes total sense, considering the rather voluminous list of things one gets not to do, in exchange for a handful of options that one does - it would be rather paralyzing to make decisions if one had to consider all the alternative possibilities.
-
-# Structural flexibility
-
-
-
-# Not just products or markets, but internal evolution
-
-I see this same issue internally in organizations, considering the adoption of disruptive practices such as DevOps and Cloud Native.
-
-# Clarity of vision for disruptive change
-
-# Hypothesis of internal change
-
-It is also stated that the level of effort in achieving effective execution of disruptive opportunities is usually lower (by orders of magnitude) when one is dealing with a new organization that is measured by and motivated with criteria that is of no interest to its larger counterpart, but how can one do that when it is an internal change? Restructure is a probable opportunity for disruption.
-
-Mix up!
+Why these two, seemingly unrelated comments? Well, a few months ago, somebody on my LinkedIn network who's also an avid reader shared a photo of some new book he had just gotten, and amongst them was _Catching big fish_. I was instantly drawn by its description: _meditation, consciousness and creativity_.
