@@ -4,8 +4,6 @@ description: "Flux2 and Crossplane for GitOps management of all your cloud resou
 date: "2021-01-24"
 featured_image: "/images/gitops_multicloud/hero.jpg"
 author: "Leonardo Murillo"
-images:
-- "/images/cloudevents-icon-color.png"
 ---
 Over the past few months, I've been very focused on GitOps, becoming actively involved in the GitOps Working Group as a contributor in the GitOps Principles Committee.
 
