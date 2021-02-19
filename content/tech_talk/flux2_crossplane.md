@@ -224,7 +224,7 @@ replicaset.apps/source-controller-74c544ddf         1         1         1       
 
 [Crossplane](https://crossplane.io/) is the platform that we will use to provision and manage all of our cloud infrastructure using Kubernetes native objects. Let's talk about some fundamental concepts that are present in Crossplane.
 
-> The full codebase that was used to produce this tutorial can be found in [this repository]()
+> The full codebase that was used to produce this tutorial can be found in [this repository](https://github.com/CloudNativeArchitects/gitopsmulticloud). Of course the secrets are no longer valid 😎
 
 ### Crossplane concepts
 
