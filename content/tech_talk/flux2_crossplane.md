@@ -1,5 +1,5 @@
 ---
-title: "GitOps for mulitcloud resources"
+title: "GitOps for multicloud resources"
 description: "Flux2 and Crossplane for GitOps management of all your cloud resources"
 date: "2021-01-24"
 featured_image: "/images/gitops_multicloud/hero.jpg"
